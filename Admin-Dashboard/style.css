@@ -1,0 +1,146 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* ================= PAGE GRID ================= */
+body {
+  display: grid;
+  grid-template-rows: 70px 1fr 50px;
+  min-height: 100vh;
+}
+
+/* ================= HEADER (GRID ONLY) ================= */
+header {
+  display: grid;
+  grid-template-columns: 150px 1fr 120px;
+  align-items: center;
+  background: #1f2937;
+  color: white;
+  padding: 10px 20px;
+}
+
+/* search */
+header form input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* profile */
+.profile figure {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: end;
+}
+
+.profile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ================= MAIN GRID ================= */
+.main {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  overflow: hidden;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  background: #111827;
+  padding: 20px;
+}
+
+.sidebar ul {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  background: transparent;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard {
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+}
+
+/* title */
+.dashboard h1 {
+  margin-bottom: 10px;
+}
+
+/* ================= CARDS (GRID) ================= */
+.dashboard section:nth-of-type(1) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.dashboard section:nth-of-type(1) article {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ================= CHART ================= */
+.dashboard section:nth-of-type(2) {
+  display: grid;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ================= LOWER SECTION ================= */
+.dashboard section:nth-of-type(3) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.dashboard section:nth-of-type(3) article {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* lists */
+.dashboard ul {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  display: grid;
+  place-items: center;
+  background: #1f2937;
+  color: white;
+}
