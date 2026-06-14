@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brand-dark: #111111;
+    --brand-light: #ffffff;
+    --brand-accent: #0284c7;     /* High-conversion digital blue */
+    --sale-red: #dc2626;         /* Urgent clearance red */
+    --bg-surface: #f6f6f6;
+    --text-muted: #6b7280;
+    --border-soft: #e5e7eb;
+    --cubic-bounce: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--brand-dark);
+    background-color: var(--brand-light);
+}
+
+body {
+    line-height: 1.5;
+}
+
+/* Fluid Typographic Hierarchies */
+h1 { font-size: calc(2.2rem + 1.8vw); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; }
+h2 { font-size: calc(1.6rem + 0.8vw); font-weight: 800; letter-spacing: -0.02em; }
+h3 { font-size: 1.05rem; font-weight: 600; color: var(--brand-dark); }
+
+
+
+/* Stick-Locked Top Navigation */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--brand-light);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 0.8rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--brand-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--brand-accent);
+}
+
+/* High-Contrast Sale Hero Banner */
+.sale-banner {
+    background-color: #000000;
+    color: var(--brand-light);
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+.sale-tag {
+    display: inline-block;
+    background-color: var(--sale-red);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.sale-banner p {
+    color: #a1a1aa;
+    margin: 1rem auto 2.2rem auto;
+    max-width: 500px;
+    font-size: 1.05rem;
+}
+
+/* Rounded Retail Action CTA Button */
+.btn-shop {
+    display: inline-block;
+    background-color: var(--brand-light);
+    color: var(--brand-dark);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s var(--cubic-bounce);
+}
+
+.btn-shop:hover {
+    background-color: var(--brand-accent);
+    color: var(--brand-light);
+    transform: scale(1.03);
+}
+
+/* Product Catalog Showcase Section */
+.catalog-section {
+    padding: 4rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.catalog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.catalog-header p {
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+}
+
+/* Product Core Grid Setup (Stacked natively on mobile devices) */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem 1.5rem;
+}
+
+/* Industrial E-Commerce Retail Product Card Component */
+.product-card {
+    position: relative; /* Anchor for badges */
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--brand-dark);
+    color: var(--brand-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    z-index: 10;
+    text-transform: uppercase;
+}
+
+.product-img-frame {
+    width: 100%;
+    background-color: var(--bg-surface);
+    position: relative;
+    overflow: hidden;
+    /* Aspect Ratio Box Trick to keep grid elements symmetrical */
+    aspect-ratio: 4 / 5; 
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s var(--cubic-bounce);
+}
+
+/* Overlay Cart Quick Action Button */
+.quick-add-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(17, 17, 17, 0.95);
+    color: var(--brand-light);
+    border: none;
+    padding: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    /* Slide out from bottom view animation architecture */
+    transform: translateY(101%); 
+    transition: transform 0.3s var(--cubic-bounce);
+}
+
+.product-info {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.product-price {
+    font-weight: 700;
+    color: var(--brand-dark);
+}
+
+.price-old {
+    font-weight: 400;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    font-size: 0.9rem;
+    margin-left: 0.4rem;
+}
+
+/* Card Hover Interactive Triggers */
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-card:hover .quick-add-btn {
+    transform: translateY(0); /* Draws cart button seamlessly back up into visual view */
+}
+
+/* Minimalist Commerce Footer */
+footer {
+    background-color: #000000;
+    color: #71717a;
+    padding: 4rem 1.5rem;
+    border-top: 1px solid #27272a;
+}
+
+.footer-logo {
+    color: var(--brand-light);
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #3f3f46;
+}
+
+
+@media (min-width: 768px) {
+    
+    /* Inline Desktop Row Header Restructure */
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.2rem 4rem;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+
+    /* Cinematic Editorial Expansion of Sale Banner */
+    .sale-banner {
+        padding: 8rem 4rem;
+        background-image: linear-gradient(to right, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+
+    .banner-content {
+        max-width: 600px;
+    }
+
+    .sale-banner p {
+        margin: 1rem 0 2.5rem 0;
+    }
+
+    /* Dense Symmetrical 4-Column Retail Grid Transformation */
+    .catalog-section {
+        padding: 6rem 4rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 Columns per wireframe requirements */
+        gap: 3rem 2rem;
+    }
+
+    /* Footer Alignment Clean Split */
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
