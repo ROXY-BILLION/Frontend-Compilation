@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #e67e22;    /* Warm restaurant orange */
+    --dark-color: #1a1a1a;       /* Elegant dark charcoal */
+    --light-color: #fcfbfa;      /* Off-white background */
+    --text-muted: #666666;
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Fluid Typography */
+h1 { font-size: calc(2.2rem + 1.2vw); line-height: 1.2; }
+h2 { font-size: calc(1.8rem + 0.8vw); }
+h3 { font-size: 1.3rem; }
+
+
+
+/* Navigation Header */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--dark-color);
+    margin-bottom: 0.8rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Banner Section */
+.hero-banner {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 0 1.5rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-content p {
+    margin: 1rem 0 2rem 0;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+/* Reusable Button styling with CSS Animation */
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(230, 126, 34, 0.5);
+    background-color: #d35400;
+}
+
+/* Menu Grid Layout (Single Column Default) */
+.menu-section {
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* Food Card Component & Zoom Hover Animation */
+.food-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: var(--transition-smooth);
+}
+
+.food-img-container {
+    width: 100%;
+    height: 240px;
+    overflow: hidden; /* Clips image scale zoom bounds */
+}
+
+.food-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.food-info {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Card Hover Triggers */
+.food-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.food-card:hover .food-img {
+    transform: scale(1.08); /* Sophisticated slow zoom visual effect */
+}
+
+/* Testimonials Layout */
+.testimonials-section {
+    background-color: #f0ede9;
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+
+.testimonial-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.author {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+/* Footer & Address Elements */
+footer {
+    background-color: var(--dark-color);
+    color: #a5a5a5;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #555555;
+}
+
+
+@media (min-width: 768px) {
+    
+    /* Transforming Navigation into a clean inline row layout */
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.2rem 4rem;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+
+    /* Elevating Hero banner display on larger Viewports */
+    .hero-banner {
+        height: 80vh;
+    }
+
+    /* Splitting standard stacked boxes into a high-end 3-Column structural grid */
+    .food-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
