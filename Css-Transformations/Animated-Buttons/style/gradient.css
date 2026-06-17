@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8fafc;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.button-wrapper {
+    width: 100%;
+    padding: 0 1.5rem;
+    max-width: 320px;
+}
+
+.btn-gradient {
+    width: 100%;
+    padding: 1.1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    
+    /* Build a background image track twice as wide as the button */
+    background-image: linear-gradient(to right, #ec4899, #8b5cf6, #3b82f6);
+    background-size: 200% auto; 
+    
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+    transition: transform 0.3s ease, 
+                background-position 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background-position: right center; /* Shifts the background track horizontally */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+}
+
+.btn-gradient:active {
+    transform: scale(0.97) translateY(0);
+}

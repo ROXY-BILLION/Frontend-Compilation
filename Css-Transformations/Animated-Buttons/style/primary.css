@@ -1,0 +1,59 @@
+/* Document Layout Container */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8fafc;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.button-wrapper {
+    width: 100%;
+    padding: 0 1.5rem;
+    max-width: 320px;
+}
+
+/* Base Structural Rules */
+.btn-primary {
+    width: 100%;
+    padding: 1.1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #0f172a; 
+    color: #ffffff;
+    position: relative;
+    overflow: hidden; /* Clips the expanding pseudo-element inside the borders */
+    z-index: 1; 
+    transition: box-shadow 0.3s ease;
+}
+
+/* The Sliding Curtain Layer */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #4f46e5; 
+    z-index: -1; /* Pushes curtain behind the text */
+    transform: scaleX(0); /* Squishes element flat horizontally */
+    transform-origin: right; /* Set to collapse away to the right side */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover & Active States */
+.btn-primary:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.15);
+}
+
+.btn-primary:hover::before {
+    transform: scaleX(1); /* Expands modifier to 100% width */
+    transform-origin: left; /* Paints outward from the left edge */
+}
+
+.btn-primary:active {
+    transform: scale(0.97);
+}

@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8fafc;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.button-wrapper {
+    width: 100%;
+    padding: 0 1.5rem;
+    max-width: 320px;
+}
+
+.btn-icon {
+    width: 100%;
+    padding: 1.1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Targets child arrow element */
+.btn-icon .btn-arrow {
+    display: inline-block; /* Allows inline tags to process 2D translate metrics */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-icon:hover {
+    background-color: #e2e8f0;
+}
+
+/* Parent-scoped hover state updates child translation */
+.btn-icon:hover .btn-arrow {
+    transform: translateX(6px); 
+}
+
+.btn-icon:active {
+    transform: scale(0.97);
+}
