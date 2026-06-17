@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #0f172a;
+    --surface: #1e293b;
+    --text-white: #ffffff;
+    --text-dim: #94a3b8;
+    --accent-glow: #38bdf8;
+    --nav-transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Mobile Layout Base (Stacked View) */
+.navbar {
+    background-color: var(--surface);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid #334155;
+}
+
+.nav-logo {
+    color: var(--text-white);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.nav-container {
+    width: 100%;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.nav-menu li {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    padding: 0.75rem 0;
+    position: relative;
+    transition: color var(--nav-transition), 
+                letter-spacing var(--nav-transition), 
+                transform var(--nav-transition);
+}
+
+/* The Sliding Underline Element */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-glow);
+    box-shadow: 0 0 12px var(--accent-glow);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--nav-transition);
+}
+
+/* Hover Interactive Mechanics */
+.nav-link:hover {
+    color: var(--text-white);
+    letter-spacing: 0.05em;
+    transform: scale(1.05);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Desktop Transformation (Horizontal Line View) */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5rem 4rem;
+    }
+
+    .nav-container {
+        width: auto;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .nav-menu li {
+        width: auto;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+}
