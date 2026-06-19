@@ -9,12 +9,21 @@ body{
     justify-content: center;
     align-items: center;
 }
-button{
+.boxes{
     margin-top: 100px;
     padding: 20px;
-    background: blue;
-    transition: 0.5s ease;
+    display: flex;
+    gap: 80px;
 }
-button:hover{
-    background-color: green;
+
+.box1{
+    background-color: blue;
+    transition: transform 0.5s ease;
+    transform-origin:bottom;
+    width: 200px;
+    height: 200px;
 }
+.box1:hover{
+     transform:rotate(-15deg);
+}
+

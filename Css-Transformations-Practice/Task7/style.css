@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color: blue;
+    transition: transform 0.5s ease;
+    transform-origin:bottom;
+    width: 200px;
+    height: 200px;
+}
+.card:hover{
+     transform:rotatez(180deg);
+}
+
