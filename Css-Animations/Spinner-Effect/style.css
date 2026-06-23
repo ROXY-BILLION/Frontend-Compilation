@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(33, 35, 35);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+h1{
+    color: white;
+}
+.box{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  /* Create a faint circle border */
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  /* Highlight just the top quarter slice to see it spin */
+  border-top-color: #00ffcc;
+  border-radius: 50%;
+  
+  /* Link our element to the @keyframes blueprint */
+  animation-name: spinEffect;
+  animation-duration: 0.8s;
+  animation-timing-function: linear; /* Keep the speed perfectly constant */
+  animation-iteration-count: infinite; /* Loop forever */
+}
+
+/* Define the blueprint */
+@keyframes spinEffect {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
