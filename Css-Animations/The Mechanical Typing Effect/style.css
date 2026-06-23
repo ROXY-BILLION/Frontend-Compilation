@@ -1,0 +1,44 @@
+/* Reset and display configuration */
+    body {
+      background-color: #05040a;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* The Typing Engine Container */
+    .typing-text {
+      font-family: 'Courier New', Courier, monospace; /* MANDATORY: uniform character widths */
+      color: #00ffcc;
+      font-size: 2.5rem;
+      font-weight: bold;
+      
+      white-space: nowrap;    /* Keeps everything strictly on a single line */
+      overflow: hidden;       /* Hides characters until the text container widens */
+      
+      /* Create a thick line on the right side to act as a terminal cursor */
+      border-right: 4px solid #00ffcc; 
+      
+      /* The phrase "Coding is art." contains exactly 14 characters (including spaces and period) */
+      width: 14ch; 
+      
+
+      animation: typeText 4s steps(14) infinite alternate,
+                 blinkCursor 0.5s step-end infinite alternate;
+    }
+
+    @keyframes typeText {
+      from {
+        width: 0;
+      }
+    }
+
+    /* Animation 2: Hides the right border halfway through the cycle to cause a blink */
+    @keyframes blinkCursor {
+      50% {
+        border-color: transparent;
+      }
+    }

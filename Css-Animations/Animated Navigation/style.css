@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #07050f;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+
+.responsive-nav {
+  background-color: #120e24;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-brand {
+  color: #ff007f;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+
+.nav-links li {
+  opacity: 0;
+  /* Elements slide up smoothly from underneath */
+  transform: translateY(20px); 
+  
+  /* Core Formula: Base delay + (Index multiplier from HTML * Interval pace) 
+     Using a modern premium ease curve (cubic-bezier) makes the arrival feel soft and fast */
+  animation: slideMenuEntry 0.6s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--i) * 0.12s) forwards;
+}
+
+.nav-links a {
+  color: #8d8a9e;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover Micro-interaction */
+.nav-links a:hover {
+  color: #00ffcc;
+  transform: scale(1.05);
+}
+
+/* The structural layout arrival blueprint */
+@keyframes slideMenuEntry {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Settle at normal resting layout coordinates */
+  }
+}
+
+
+@media (min-width: 768px) {
+  body {
+    display: flex; /* Turn whole body frame into a row canvas */
+  }
+
+  .responsive-nav {
+    width: 260px;
+    height: 100vh;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 50px 30px;
+    flex-direction: column; /* Force brand stacked above vertical list items */
+    justify-content: flex-start;
+    gap: 50px;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Turn horizontal tags into a vertical column drawer list */
+    gap: 25px;
+  }
+
+  /* Adjust entry direction for standard landscape desktop viewports */
+  .nav-links li {
+    transform: translateX(-40px); /* Arrive smoothly from left instead of from bottom */
+    animation-name: slideMenuEntryDesktop;
+  }
+
+  @keyframes slideMenuEntryDesktop {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
