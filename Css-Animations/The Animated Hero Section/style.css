@@ -1,0 +1,96 @@
+   /* Reset and layout alignment */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #07050f;
+      color: #ffffff;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Content wrapper */
+    .hero-container {
+      text-align: center;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    /* 1. Heading Styles */
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+      
+      opacity: 0; /* Hidden before the animation starts */
+      /* Syntax shorthand: name | duration | timing curve | fill-mode */
+      animation: dropDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* 2. Subtitle Styles */
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #8d8a9e;
+      line-height: 1.6;
+      margin-bottom: 35px;
+      
+      opacity: 0; /* Hidden before the animation starts */
+      /* Notice the 5th parameter: 0.4s is the animation-delay! */
+      animation: pureFade 1s ease 0.4s forwards;
+    }
+
+    /* 3. Button Styles */
+    .hero-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background-color: #ff007f;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 6px;
+      box-shadow: 0 4px 20px rgba(255, 0, 127, 0.2);
+      
+      opacity: 0; /* Hidden before the animation starts */
+      /* This one waits 0.8 seconds before popping up */
+      animation: popUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+    }
+
+
+
+    /* Slide down from -40px to 0px while fading in */
+    @keyframes dropDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Simple visibility fade-in */
+    @keyframes pureFade {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Slide up from 40px to 0px while fading in */
+    @keyframes popUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
