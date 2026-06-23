@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #07050f;
+  color: #ffffff;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Important: Prevents background blur shapes from causing scrollbars */
+}
+
+/* Base framework wrapper */
+.landing-hero-viewport {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10; /* Keeps content layered perfectly above the floating canvas background */
+}
+
+.content-wrapper {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
+.landing-main-title {
+  font-size: 2.5rem; /* Mobile first default size */
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  
+  opacity: 0;
+  /* Shorthand: name | duration | premium smooth easing curve | fill-mode */
+  animation: entranceRevealDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.landing-paragraph-desc {
+  color: #8d8a9e;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  
+  opacity: 0;
+  /* Staggered load via 0.4s delay value */
+  animation: entranceFadeIn 1s ease 0.4s forwards;
+}
+
+.landing-action-button {
+  display: inline-block;
+  padding: 16px 36px;
+  background-color: #ff007f;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(255, 0, 127, 0.25);
+  
+  opacity: 0;
+  /* Staggered load via 0.8s delay value */
+  animation: entranceRevealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button Hover State */
+.landing-action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 0, 127, 0.45);
+}
+
+
+.ambient-canvas-shape {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #ff007f, #00ffcc);
+  
+  /* Creates an initial organic fluid asymmetric border matrix */
+  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  filter: blur(50px);
+  opacity: 0.18;
+  
+  /* Centered placement reference limits */
+  top: 25%;
+  left: 20%;
+  z-index: 1;
+
+  /* Infinite operational loop tracking setup:
+     'infinite' keeps it going, 'alternate' smooths direction swaps */
+  animation: liquidPhysicsLoop 15s ease-in-out infinite alternate;
+}
+
+
+@keyframes entranceRevealDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes entranceRevealUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes entranceFadeIn {
+  to { opacity: 1; }
+}
+
+/* Liquid Canvas Blob Animation Matrix:
+   Changes location coordinates, alters scaling factor, and adjusts border curving all at once */
+@keyframes liquidPhysicsLoop {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  }
+  50% {
+    transform: translate(80px, -60px) scale(1.2) rotate(90deg);
+    border-radius: 60% 40% 45% 55% / 50% 65% 35% 50%;
+  }
+  100% {
+    transform: translate(-40px, 60px) scale(0.85) rotate(180deg);
+    border-radius: 50% 50% 50% 50% / 40% 50% 50% 60%;
+  }
+}
+
+@media (min-width: 768px) {
+  .landing-main-title {
+    font-size: 4rem; /* Scales heading up beautifully on tablet & monitors */
+  }
+  
+  .landing-paragraph-desc {
+    font-size: 1.3rem; /* Slightly larger reading font on wide displays */
+  }
+
+  .ambient-canvas-shape {
+    width: 500px; /* Expands background canvas footprint dynamically */
+    height: 500px;
+    top: 15%;
+    left: 35%;
+  }
+}
