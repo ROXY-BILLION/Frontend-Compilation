@@ -716,7 +716,4 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    .student-info{
-      flex-direction: column;
-    }
 }
