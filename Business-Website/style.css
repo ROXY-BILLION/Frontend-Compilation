@@ -644,9 +644,7 @@ footer {
     transform: scale(1.1);
     background-color: #20ba5a;
 }
-.box {
-   background-color: #0f1319;
-}
+
 /*----------------------------------------------------------------------------
   13. CORE KEYFRAMES & ANIMATIONS
 ----------------------------------------------------------------------------*/
@@ -717,5 +715,8 @@ footer {
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+    }
+    .student-info{
+      flex-direction: column;
     }
 }
