@@ -383,6 +383,398 @@ footer .fa-solid{
     background-color: #060f2f !important;
     color: white;
 }
-@media(max-width:760px){
+/*LARGE TABLETS (1024px)*/
+
+@media (max-width:1024px){
+
+    header{
+        padding:20px 40px;
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .hero{
+        padding:40px;
+        align-items:center;
+    }
+
+    .profile img{
+        width:300px;
+        height:300px;
+    }
+
+    .performance{
+        width:95%;
+        margin:20px auto;
+        gap:25px;
+        flex-wrap:wrap;
+    }
+
+    #aboutme{
+        margin:30px;
+        gap:40px;
+        flex-wrap:wrap;
+    }
+
+    #skills{
+        margin:30px;
+    }
+
+    .skillset{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .bottom{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    footer{
+        flex-wrap:wrap;
+        gap:40px;
+    }
+
+}
+
+
+/* TABLETS (768px)*/
+
+@media (max-width:768px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+
+    .logo{
+        justify-content:center;
+    }
+
+    .nav-link{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding:30px 20px;
+    }
+
+    .bio{
+        margin-top:0;
+    }
+
+    .profile img{
+        width:280px;
+        height:280px;
+    }
+
+    .icons{
+        justify-content:center;
+    }
+
+    .performance{
+        flex-direction:column;
+        align-items:flex-start;
+        width:95%;
+        margin:auto;
+    }
+
+    .code,
+    .responsive,
+    .Fast,
+    .user{
+        width:100%;
+    }
+
+    #aboutme{
+        flex-direction:column;
+        text-align:center;
+        margin:20px;
+        gap:30px;
+    }
+
+    .ab{
+        justify-content:center;
+    }
+
+    .Accolades{
+        width:100%;
+        gap:20px;
+    }
+
+    .yrs,
+    .projects,
+    .clients,
+    .certification{
+        justify-content:center;
+    }
+
+    #skills{
+        margin:20px;
+        padding:25px;
+    }
+
+    .skillset{
+        gap:30px;
+    }
+
+    .bars{
+        width:100%;
+    }
+
+    .card{
+        width:100%;
+        max-width:350px;
+    }
+
+    #features .card img{
+        width:100%;
+        height:auto;
+    }
+
+    footer{
+        flex-direction:column;
+        text-align:center;
+        align-items:center;
+    }
+
+    .contact{
+        align-items:center;
+    }
+
+    .follow{
+        text-align:center;
+    }
+
+    .flw{
+        justify-content:center;
+        display:flex;
+    }
+
+}
+
+
+/* PHONES (600px)*/
+
+@media (max-width:600px){
+
+    .logo-text h2{
+        font-size:22px;
+    }
+
+    .logo-text p{
+        font-size:14px;
+    }
+
+    .bio h1{
+        font-size:34px;
+    }
+
+    .bio h2{
+        font-size:24px;
+    }
+
+    .bio p{
+        font-size:16px;
+    }
+
+    .btn{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .btn button{
+        width:170px;
+    }
+
+    .profile img{
+        width:240px;
+        height:240px;
+    }
+
+    .about h2{
+        font-size:26px;
+    }
+
+    .about p{
+        font-size:15px;
+    }
+
+    .skillset{
+        justify-content:center;
+    }
+
+    .skillset h3{
+        font-size:18px;
+    }
+
+    .card{
+        max-width:100%;
+    }
+
+    .button{
+        flex-wrap:wrap;
+    }
+
+    footer .connect h3{
+        font-size:30px;
+    }
+
+    footer .connect p{
+        font-size:16px;
+    }
+
+}
+
+
+/* SMALL PHONES (480px)*/
+
+@media (max-width:480px){
+
+    header{
+        padding:15px;
+    }
+
+    .nav-link{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hire-btn{
+        width:100%;
+    }
+
+    .hero{
+        padding:20px 15px;
+    }
+
+    .bio h1{
+        font-size:28px;
+    }
+
+    .bio h2{
+        font-size:20px;
+    }
+
+    .bio p{
+        font-size:14px;
+    }
+
+    .btn button{
+        width:100%;
+    }
+
+    .icons{
+        flex-wrap:wrap;
+    }
+
+    .profile img{
+        width:200px;
+        height:200px;
+    }
+
+    .performance{
+        padding:20px;
+    }
+
+    .fa-solid,
+    .fa-brands,
+    .fa-regular{
+        width:45px;
+        height:45px;
+        font-size:20px;
+    }
+
+    #aboutme{
+        margin:15px;
+        padding:20px;
+    }
+
+    #aboutme img{
+        width:200px;
+        height:200px;
+    }
+
+    #skills{
+        margin:15px;
+        padding:20px;
+    }
+
+    .skillset{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .bar{
+        margin:15px 0;
+    }
+
+    #features{
+        margin-top:40px;
+    }
+
+    .bottom{
+        gap:25px;
+    }
+
+    .card{
+        padding:15px;
+        height:auto;
+    }
+
+    footer{
+        padding:20px;
+    }
+
+    footer .bt{
+        width:180px;
+        margin:auto;
+        margin-top:15px;
+    }
+
+}
+
+
+/*EXTRA SMALL DEVICES (360px)*/
+
+@media (max-width:360px){
+
+    .logo-text h2{
+        font-size:18px;
+    }
+
+    .bio h1{
+        font-size:24px;
+    }
+
+    .bio p{
+        font-size:13px;
+    }
+
+    .skillset{
+        grid-template-columns:1fr;
+    }
+
+    .profile img{
+        width:180px;
+        height:180px;
+    }
+
+    #aboutme img{
+        width:180px;
+        height:180px;
+    }
+
+    footer .connect h3{
+        font-size:24px;
+    }
 
 }
