@@ -110,7 +110,7 @@ header{
     gap: 10px;
 }
 
-.fa-solid , .fa-regular{
+.fa-solid , .fa-regular, .fa-brands{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,8 +146,12 @@ header{
     margin-top: 20px;
     display: flex;
     gap: 80px;
+    background-color: #0e2884;
+    border-radius: 1.5rem;
+    padding: 10px;
     justify-content: center;
     align-items: center;
+    margin: 45px;
 }
 #aboutme img{
     width: 250px;
@@ -185,4 +189,200 @@ header{
 }
 .fa-calendar-check, .fa-diagram-project, .fa-face-smile,.fa-award{
     color: rgb(80, 80, 186);
+}
+.top{
+    color: white;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#skills{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: #060f2f;
+    border-radius: 1.5rem;
+   padding: 40px;
+}
+.skillset{
+    display: flex;
+    gap: 20px;
+}
+.skillset h3{
+    color: white;
+    font-size: 25px;
+}
+.skillset ,.fa-brands ,.fa-solid{
+    border: none !important;
+    background-color: #040713 !important;
+}
+.html, .css, .js, .react, .node, .express, .git, .mongodb, .native, .tail{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fa-html5{
+    color: orangered;
+    font-size: 50px;
+}
+.fa-css3-alt{
+    color: rgb(120, 120, 182);
+    font-size: 50px;
+}
+.fa-js{
+    color: yellow;
+    font-size: 50px;
+}
+.fa-react{
+    color: rgb(60, 60, 227);
+    font-size: 50px;
+}
+.fa-node-js{
+    color: green;
+    font-size: 50px;
+}
+.fa-server{
+    color: white;
+    font-size: 50px;
+}
+.fa-git-alt{
+    color: orangered;
+    font-size: 50px;
+}
+.fa-database{
+    color: pink;
+    font-size: 50px;
+}
+.fa-feather{
+    font-size: 50px;
+    color: blue;
+}
+.bar{
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+}
+.b{
+    color: white;
+    background-color: blue;
+    height: 10px;
+    width: 100%;
+    border-radius: 2rem;
+}
+.b1{
+   background-color: rgb(65, 65, 194);
+    height: 10px;
+    width: 90%;
+    border-radius: 2rem;
+}
+.b1 h4{
+    margin-left: 10px;
+}
+.b2{
+   background-color: rgb(65, 65, 194);
+    height: 10px;
+    width: 95%;
+    border-radius: 2rem;
+}
+.b2 h4{
+    margin-left: 10px;
+}
+#features{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+#features .card img{
+    width: 300px;
+    height: 300px;
+    border-radius: 1.5rem;
+}
+.bottom{
+    display: flex;
+    gap: 20px;
+}
+.card{
+    width: 320px;
+    height: 460px;
+    padding-left: 10px;
+    padding-right: 30px;
+    color: white;
+    background-color: #0e1845;
+    border-radius: 1.5rem;
+    padding-bottom: 40px;
+}
+.button{
+    display: flex;
+    gap: 20px;
+}
+.btn{
+    margin-top: 10px;
+    background-color: #0e2884;
+    border-radius: 1.4rem;
+    padding: 10px;
+}
+.fa-arrow-right{
+    font-size: 25px;
+    color: #1333c5;
+}
+.fa-solid.fa-arrow-right{
+    color:#0e37cf;
+}
+.button .fa-solid{
+    background-color: #060917 !important;
+}
+footer{
+    background-color: #060f2f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+footer .connect h3{
+   color: white;
+   font-size: 40px;
+}
+footer .connect h3 strong{
+    color: #0e37cf;
+}
+footer .connect p{
+    font-size: 20px;
+}
+footer .bt{
+    margin-top: 10px;
+    background: #040713;
+    width: 28%;
+    padding: 8px;
+    border-radius: 1.5rem;
+    background-color: #0e37cf;
+}
+footer .fa-solid{
+    background-color: #060f2f !important;
+    color: white;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+}
+.email, .phone, .location{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.follow h4{
+    color: white;
+    font-size: 30px;
+}
+.follow .fa-brands{
+    background-color: #060f2f !important;
+    color: white;
+}
+@media(max-width:760px){
+
 }
