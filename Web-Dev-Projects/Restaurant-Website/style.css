@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: whitesmoke;
+}
+.logo h1{
+    border-bottom: 4px solid red;
+}
+nav{
+    display: flex;
+    gap: 120px;
+}
+nav li{
+    list-style: none;
+}
+nav li a{
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+.hero{
+    display: flex;
+    gap: 20px;
+}
+.hero img{
+    width: 70vw;
+    height: 90vh;
+}
+.writeup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 40vw;
+    margin-left: 50px;
+}
+.writeup h1{
+    border-bottom:  4px solid red;
+    width: 70%;
+} 
+.writeup p{
+    padding: 20px;
+}
+.writeup button{
+    padding: 15px;
+    color: blue;
+    background-color: aqua;
+    border: none;
+    border-radius: 10%;
+}
+.getstarted{
+    display: flex;
+    background-color: rgb(53, 49, 49);
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.getstarted button{
+    margin: 40px;
+    padding: 10px;
+    background-color: rgb(131, 116, 116);
+    border: none;
+}
+.write{
+    margin: 40px;
+    font-size: 25px;
+}
