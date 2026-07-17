@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aqua;
+}
+.register{
+    background-color: aliceblue;
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    margin-left: 190px;
+    margin-top: 90px;
+    border: 3px solid black;
+    width: 70%;
+    padding: 100px 0;
+}
+.registration{
+    border-right: 2px solid black;
+    padding: 10px;
+}
+.registration form{
+    display: flex;
+    cursor: pointer;
+    gap: 5px;
+    padding: 10px;
+    flex-direction: column;
+}
+form input{
+    padding: 10px;
+    cursor: pointer;
+}
+form input:focus{
+    border: 3px solid black;
+}
+.submit{
+   width: 95%;
+   cursor: pointer;
+   margin-left: 10px;
+   padding: 4px;
+   font-size: 15px;
+   background-color: aquamarine;
+   border: none;
+   border-radius: 0.4rem;
+}
+.submit:hover{
+    background-color: rgb(7, 34, 34);
+    color: white;
+    font-size: 20px;
+}
+.records{
+    display: flex;
+    margin-top: -70px;
+    flex-direction: column;
+}
+table{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #1306062e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+thead{
+    background: #2563eb;
+    color: rgba(25, 6, 6, 0.251);
+}
+
+th,
+td{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 3px solid #150c0c6c;
+}
+
+tbody tr:hover{
+    background: #23131338;
+    transition: 0.3s;
+}
+
+tbody tr:last-child td{
+    border-bottom: none;
+}
+
+/* Edit Button */
+td:nth-child(4){
+    color: #2563eb;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+td:nth-child(4):hover{
+    text-decoration: underline;
+}
+
+/* Delete Button */
+td:nth-child(5){
+    color: #dc2626;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+td:nth-child(5):hover{
+    text-decoration: underline;
+}
