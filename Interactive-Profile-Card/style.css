@@ -20,6 +20,9 @@ body{
     border-radius: 1rem;
     cursor: pointer;
 }
+.card{
+    transition: transform 0.3s;
+}
 .card img{
     width: 150px;
     height: 150px;
@@ -30,4 +33,7 @@ body{
 }
 .blue{
     color: blue;
+}
+.card-hover{
+    transform: scale(1.1);
 }
