@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background:rgb(33, 126, 135);
+    padding:30px;
+}
+
+#products{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:200px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:15px;
+}
+
+.card h2{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:green;
+    font-weight:bold;
+}
