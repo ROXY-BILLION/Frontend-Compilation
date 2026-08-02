@@ -17,4 +17,3 @@ const savedUsername = localStorage.getItem("username");
 if (savedUsername) {
     welcome.textContent = "Welcome " + savedUsername;
 }
-localStorage.clear();
