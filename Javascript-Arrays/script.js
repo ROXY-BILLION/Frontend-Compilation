@@ -58,3 +58,28 @@ const total = prices.reduce(function(total, price) {
     return total + price;
 }, 0);
 console.log(total);
+
+const result = fetch("https://jsonplaceholder.typicode.com/users");
+console.log(result);
+
+fetch("https://api.github.com/users/divine")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data.name);
+        console.log(data.followers);
+        console.log(data.public_repos);
+    });
+
+
+async function getUser() {
+    try {
+        const response = await fetch("https://api.github.com/users/divine");
+        const data = await response.json();
+        console.log(data.name);
+    } catch (error) {
+        console.log(error);
+    }  
+}
+getUser();
